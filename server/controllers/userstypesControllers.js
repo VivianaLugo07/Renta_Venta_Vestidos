@@ -45,25 +45,14 @@ const edit = (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
         conn.query(
-            `UPDATE FROM tiposusuarios set ? WHERE id = ?`,
-            [req.body, req.params.id], (err, rows) => {
+            `UPDATE tiposusuarios SET ? WHERE tipousuario = ?`,
+            [req.body, req.params.input], (err, rows) => {
                 if (err) return res.send(err)
 
                 res.send('Tipo de usuario actualizado')
             })
     })
 }
-
-// //    ELIMINAAAR   -----------------
-// routes.delete('/:criterio', (req, res) => {
-//     req.getConnection((err, conn) => {
-//         if (err) return res.send(err)
-//         conn.query(`DELETE FROM tiposusuarios WHERE id = ? OR nombre =?`, req.params.criterio, (err, rows) => {
-//             if(err) return res.send(err)
-//             res.send('Tipo de usuario eliminado')
-//         })
-//     })
-// })
 
 module.exports = {
     getAll,

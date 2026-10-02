@@ -6,6 +6,6 @@ const userstypesControllers = require('../controllers/userstypesControllers')
 routes.get('/', userstypesControllers.getAll)
 routes.delete('/:id', userstypesControllers.delete)
 routes.post('/', userstypesControllers.create)
-routes.put('/', userstypesControllers.edit)
+routes.put('/:input', userstypesControllers.edit)
 
 module.exports = routes

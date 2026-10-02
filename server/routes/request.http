@@ -7,18 +7,54 @@ POST http://localhost:9000/api/userstypes HTTP/1.1
 Content-Type: application/json
 
 {
-    "tipousuario": "Gerente"
+    "tipousuario": "Gerente1"
 }
-###
-
-DELETE http://localhost:9000/api/userstypes/nombre_dato_eliminar(Cliente) HTTP/1.1
-
-
 
 ###
-PUT http://localhost:9000/api/id_num(1)
+DELETE http://localhost:9000/api/userstypes/Cliente HTTP/1.1
+
+###
+PUT http://localhost:9000/api/userstypes/Gerente1
 Content-Type: application/json
 
 {
-    "tipousuario": "Gerente"
+    "tipousuario": "Gerente0"
+}
+
+######## ESTE ES DE USERS
+###
+GET http://localhost:9000/api/users HTTP/1.1 
+
+###
+GET http://localhost:9000/api/users/Tere HTTP/1.1
+
+###
+POST http://localhost:9000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "John",
+    "apellido": "Doe",
+    "contrasena": "password123",
+    "numtelefono": "1234567890",
+    "tipousuario": "Cliente",
+    "curp": "DoeJoh1234567890",
+    "direccion": "123 Main St"
+}
+
+###
+DELETE http://localhost:9000/api/users/3 HTTP/1.1
+
+###
+PUT http://localhost:9000/api/users/3
+Content-Type: application/json
+
+{
+    "nombre": "Tere",
+    "apellido": "",
+    "contrasena": "",
+    "numtelefono": "",
+    "tipousuario": "Admin",
+    "curp": "",
+    "direccion": ""
 }
