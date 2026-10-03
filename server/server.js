@@ -3,8 +3,11 @@ require('dotenv').config()
 const express = require('express') //constante express que vamos a requerir
 const mysql = require('mysql') //constante mysql que vamos a requerir
 const myconn = require('express-myconnection') //constante myConnection que vamos a requerir
+
+// ROUTES
 const userstypes = require('./routes/userstypesRoutes')
 const users = require('./routes/usersRoutes')
+const dresses = require('./routes/dressesRoutes')
 
 
 const app = express() //constante app que va a ejecutar express
@@ -22,9 +25,10 @@ const dbOptiones = { //constante dbOptions que va a contener la configuracion de
 app.use(myconn(mysql, dbOptiones, 'single')) //metodo express  nos permite usar la conexion a la base de datos
 app.use(express.json())
 
-// ruoules-------------------------------
+// routes-------------------------------
 app.use('/api/userstypes', userstypes)
 app.use('/api/users', users)
+app.use('/api/dresses', dresses)
 
 app.get('/', (req, res) => { //metodo express que nos permite hacer una peticion get
     res.send('Welcome to my API') //mensaje que nos permite saber si la peticion get funciona
