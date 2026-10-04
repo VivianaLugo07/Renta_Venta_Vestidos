@@ -8,6 +8,7 @@ const myconn = require('express-myconnection') //constante myConnection que vamo
 const userstypes = require('./routes/userstypesRoutes')
 const users = require('./routes/usersRoutes')
 const dresses = require('./routes/dressesRoutes')
+const schedules = require('./routes/schedulesRoutes')
 
 
 const app = express() //constante app que va a ejecutar express
@@ -29,6 +30,7 @@ app.use(express.json())
 app.use('/api/userstypes', userstypes)
 app.use('/api/users', users)
 app.use('/api/dresses', dresses)
+app.use('/api/schedules', schedules)
 
 app.get('/', (req, res) => { //metodo express que nos permite hacer una peticion get
     res.send('Welcome to my API') //mensaje que nos permite saber si la peticion get funciona

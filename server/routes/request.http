@@ -108,3 +108,44 @@ Content-Type: application/json
     "sevende": true,
     "costoventa": 5000.00
 }
+
+
+######## Horarios / schedules #############################
+### obtener los datos
+GET http://localhost:9000/api/schedules HTTP/1.1
+
+### crear un horario
+POST http://localhost:9000/api/schedules HTTP/1.1
+Content-Type: application/json
+
+{
+    "horarioapertura": "09:00:00",
+    "horariocierre": "18:00:00",
+    "lunes": false,
+    "martes": false,
+    "miercoles": false,
+    "jueves": false,
+    "viernes": false,
+    "sabado": true,
+    "domingo": false
+}
+### Editar un horario con id
+PUT http://localhost:9000/api/schedules/2
+Content-Type: application/json
+
+{
+    "horarioapertura": "08:00:00",
+    "horariocierre": "16:00:00",
+    "lunes": false,
+    "martes": false,
+    "miercoles": false,
+    "jueves": false,
+    "viernes": true,
+    "sabado": false,
+    "domingo": false
+}
+
+
+### Eliminar horario
+DELETE http://localhost:9000/api/schedules/2 HTTP/1.1
+
