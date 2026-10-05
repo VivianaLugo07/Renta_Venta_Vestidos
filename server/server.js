@@ -9,6 +9,7 @@ const userstypes = require('./routes/userstypesRoutes')
 const users = require('./routes/usersRoutes')
 const dresses = require('./routes/dressesRoutes')
 const schedules = require('./routes/schedulesRoutes')
+const dresssales = require('./routes/dresssalesRoutes')
 
 
 const app = express() //constante app que va a ejecutar express
@@ -31,6 +32,7 @@ app.use('/api/userstypes', userstypes)
 app.use('/api/users', users)
 app.use('/api/dresses', dresses)
 app.use('/api/schedules', schedules)
+app.use('/api/dresssales', dresssales)
 
 app.get('/', (req, res) => { //metodo express que nos permite hacer una peticion get
     res.send('Welcome to my API') //mensaje que nos permite saber si la peticion get funciona
